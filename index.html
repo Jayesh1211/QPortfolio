@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayesh Hire | Quantum Computing Specialist & Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Enhanced Quantum theme with better contrast and visibility */
+        :root {
+            --primary: #0c1220; /* Darker base for better contrast */
+            --secondary: #1a2332; /* Lighter than primary for depth */
+            --accent: #00e5ff; /* Brighter cyan for visibility */
+            --accent-light: #80ffea; /* Softer cyan for highlights */
+            --accent-dark: #00a8cc; /* Darker cyan for borders */
+            --text-primary: #f0f8ff; /* Brighter text for readability */
+            --text-secondary: #a8b2d1; /* Softer but visible secondary text */
+            --highlight: #ff4d8d; /* Vibrant pink for highlights */
+            --highlight-light: #ff80ab; /* Lighter pink */
+            --card-bg: rgba(26, 35, 50, 0.85); /* Slightly transparent but solid */
+            --card-border: rgba(0, 229, 255, 0.3); /* Visible borders */
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Enhanced Quantum/Atomic Background with better visibility */
+        .quantum-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 77, 141, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(128, 255, 234, 0.08) 0%, transparent 50%),
+                linear-gradient(180deg, var(--primary) 0%, #0e1525 100%);
+        }
+        
+        /* Atomic nuclei - more visible */
+        .nucleus {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent), rgba(0, 229, 255, 0.3));
+            box-shadow: 0 0 25px var(--accent);
+            opacity: 0.4;
+        }
+        
+        /* Electron orbitals - more defined */
+        .orbital {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 229, 255, 0.25);
+            opacity: 0.25;
+        }
+        
+        /* Electrons - brighter */
+        .electron {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-light), rgba(128, 255, 234, 0.5));
+            box-shadow: 0 0 15px var(--accent-light);
+            opacity: 0.8;
+        }
+        
+        /* Quantum particles - more vibrant */
+        .quantum-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--highlight), rgba(255, 77, 141, 0.4));
+            box-shadow: 0 0 15px var(--highlight);
+            opacity: 0.5;
+        }
+        
+        /* Wave patterns - more visible */
+        .wave {
+            position: absolute;
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation - Enhanced visibility */
+        header {
+            background-color: rgba(12, 18, 32, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--card-border);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+        
+        .logo span {
+            color: var(--text-primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 1.05rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+            background-color: rgba(0, 229, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 26px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - Enhanced */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--accent-light);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(128, 255, 234, 0.2);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: rgba(0, 229, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid rgba(0, 229, 255, 0.3);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-8px) scale(1.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+        
+        .profile-summary {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 35px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            border-top: 1px solid var(--card-border);
+            border-right: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+        }
+        
+        .profile-summary p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* Section Styling - Enhanced */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 70px;
+            text-align: center;
+            position: relative;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--highlight));
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+        }
+        
+        /* Cards - Enhanced visibility */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 2px solid var(--card-border);
+            backdrop-filter: blur(5px);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 229, 255, 0.2);
+            border-color: var(--accent);
+        }
+        
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+        
+        .card-subtitle {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .card-subtitle i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .card-date {
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0.2), rgba(255, 77, 141, 0.2));
+            color: var(--accent);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+        }
+        
+        .card ul {
+            padding-left: 20px;
+        }
+        
+        .card li {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+        
+        /* Experience Timeline - Enhanced */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--highlight));
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+        }
+        
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: 60px;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 60px;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            top: 0;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 15px var(--accent);
+        }
+        
+        .timeline-item:nth-child(odd):after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -12px;
+        }
+        
+        /* Skills - Enhanced */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(0, 229, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .skill {
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0.2), rgba(0, 229, 255, 0.1));
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            transition: var(--transition);
+        }
+        
+        .skill:hover {
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0.3), rgba(0, 229, 255, 0.2));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+        }
+        
+        /* Publications - Enhanced Style */
+        .publications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+            gap: 35px;
+        }
+        
+        .pub-card {
+            background: linear-gradient(145deg, rgba(26, 35, 50, 0.95), rgba(12, 18, 32, 0.95));
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 6px solid var(--highlight);
+            transition: var(--transition);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 77, 141, 0.2);
+            border-right: 1px solid rgba(255, 77, 141, 0.2);
+            border-bottom: 1px solid rgba(255, 77, 141, 0.2);
+        }
+        
+        .pub-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 77, 141, 0.3);
+            border-color: var(--highlight);
+        }
+        
+        .pub-icon {
+            font-size: 2.2rem;
+            color: var(--highlight);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 77, 141, 0.5);
+        }
+        
+        .pub-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--accent-light);
+            line-height: 1.4;
+        }
+        
+        .pub-authors {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .pub-venue {
+            color: var(--highlight);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 8px 15px;
+            background-color: rgba(255, 77, 141, 0.15);
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 77, 141, 0.3);
+        }
+        
+        /* Achievements - Enhanced Style */
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+            gap: 35px;
+        }
+        
+        .achievement-card {
+            background: linear-gradient(145deg, rgba(26, 35, 50, 0.95), rgba(12, 18, 32, 0.95));
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: var(--transition);
+            border-top: 6px solid var(--accent);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(0, 229, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+            border-left: 1px solid rgba(0, 229, 255, 0.2);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 229, 255, 0.3);
+            border-color: var(--accent);
+        }
+        
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+        
+        .achievement-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .achievement-details {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .achievement-venue {
+            color: var(--highlight);
+            font-size: 0.95rem;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+        
+        /* Education - Enhanced */
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+        
+        .education-icon {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(0, 229, 255, 0.1));
+            color: var(--accent);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 25px;
+            flex-shrink: 0;
+            border: 2px solid rgba(0, 229, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+        
+        /* Contact Section - Enhanced */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 45px;
+            margin-top: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(0, 229, 255, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            border: 2px solid rgba(0, 229, 255, 0.3);
+        }
+        
+        .contact-details h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .contact-details p {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border: 2px solid var(--card-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            background-color: rgba(12, 18, 32, 0.7);
+            border: 2px solid rgba(0, 229, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        /* Footer - Enhanced */
+        footer {
+            background-color: var(--secondary);
+            padding: 70px 0 40px;
+            text-align: center;
+            border-top: 2px solid var(--card-border);
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        footer p {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 35px 0;
+        }
+        
+        .footer-links li {
+            margin: 0 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 229, 255, 0.15);
+            border: 2px solid rgba(0, 229, 255, 0.3);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            background-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 40px;
+        }
+        
+        /* Certifications */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .publications-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+            }
+            
+            .timeline-item:after {
+                left: 21px !important;
+                right: auto !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(12, 18, 32, 0.98);
+                flex-direction: column;
+                padding: 25px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                border-top: 2px solid var(--card-border);
+                border-bottom: 2px solid var(--card-border);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
+            
+            .achievements-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .publications-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .pub-card, .achievement-card {
+                padding: 25px;
+            }
+            
+            .education-item {
+                flex-direction: column;
+            }
+            
+            .education-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Quantum/Atomic Background -->
+    <div class="quantum-background" id="quantum-background"></div>
+    
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">Quantum<span>Portfolio</span></a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Jayesh Hire</h1>
+            <div class="hero-subtitle">Quantum Computing Specialist & Researcher</div>
+            <div class="hero-tagline">Advancing quantum technologies for real-world impact through innovation and collaboration</div>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="Jayesh-Hire-CV.pdf" download class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/Jayesh1211" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jayeshhire456" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            
+            <div class="profile-summary">
+                <p>Quantum Computing Specialist with extensive expertise in quantum algorithms, quantum machine learning, and quantum cryptography. Proven track record in developing practical quantum solutions for healthcare, neuroscience, and data security applications. Committed to advancing quantum technologies through interdisciplinary research and industry collaboration.</p>
+                <p>Currently contributing to cutting-edge research at C-DAC's Quantum AI Group, focusing on quantum-enhanced analysis of EEG brain signals. Seeking to leverage quantum computing expertise to solve complex global challenges in collaboration with innovative teams.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Professional Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>Project Engineer - Quantum AI Group</h3>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> Centre for Development of Advanced Computing (C-DAC)</div>
+                        <div class="card-date">Present</div>
+                        <ul>
+                            <li>Working on analysis of EEG brain signals to explore integration with quantum machine learning models</li>
+                            <li>Designing hybrid quantum-classical pipelines for brain-signal classification and cognitive state prediction</li>
+                            <li>Investigating quantum feature encoding methods to enhance representation of non-linear EEG patterns</li>
+                            <li>Contributing to research documentation and experimental studies on quantum applications in neuroscience</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>R&D - Quantum Computing Specialist</h3>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> TrevasQ</div>
+                        <div class="card-date">2023 - 2024</div>
+                        <ul>
+                            <li>Created Quantum Hash functions as backbone of Quantum Digital Signature workflow</li>
+                            <li>Led development of decentralized quantum machine learning frameworks for privacy-preserving healthcare applications</li>
+                            <li>Researched and applied single-qubit encoding methods across multi-qubit systems to optimize quantum neural network architectures</li>
+                            <li>Spearheaded research proposals and strategic roadmaps to accelerate quantum computing adoption</li>
+                            <li>Collaborated with academic and industry partners to drive interdisciplinary innovation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>Quantum Computing Intern</h3>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> TrevasQ</div>
+                        <div class="card-date">2022 - 2023</div>
+                        <ul>
+                            <li>Developed and implemented a quantum watermarking algorithm to strengthen data security and integrity</li>
+                            <li>Studied and implemented Grover's search algorithm for real-world flight data retrieval systems</li>
+                            <li>Conducted in-depth studies of quantum algorithms to identify high-impact, real-world use cases</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>Project Intern</h3>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> QWorld</div>
+                        <div class="card-date">2022</div>
+                        <ul>
+                            <li>Focused on exploring mathematical approaches and analytical results for composite quantum systems and modeling</li>
+                            <li>Project: Enhancing Quantum Information Science with Efficient Quantum Resources</li>
+                            <li>Mentor: Dr. Fadwa Benabdallah @ Université Mohammed V de Rabat</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="card">
+                        <h3>Project Intern</h3>
+                        <div class="card-subtitle"><i class="fas fa-building"></i> QuantumAI</div>
+                        <div class="card-date">2021</div>
+                        <ul>
+                            <li>Worked on Quantum circuit and Quantum Simulator</li>
+                            <li>Built a quantum simulator model for mimicking real hardware</li>
+                            <li>Analyzed Circuit Parameters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-details">
+                    <h3>Master of Science (Physics)</h3>
+                    <div class="card-subtitle"><i class="fas fa-university"></i> University of Mumbai</div>
+                    <div class="card-date">CGPA: 8.46 / 10</div>
+                    <p><strong>Projects:</strong></p>
+                    <ul>
+                        <li>Effect of Phase and Spatial Distinguishability of Photon Pairs on the Entanglement Fidelity</li>
+                        <li>Quantum Neural Networks for Fashion MNIST Classification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+            <div class="skills-container">
+                <!-- Quantum Skills -->
+                <div class="skill-category">
+                    <h3>Quantum Computing</h3>
+                    <div class="skill-list">
+                        <span class="skill">Quantum Algorithms</span>
+                        <span class="skill">Quantum Machine Learning</span>
+                        <span class="skill">Quantum Optimization</span>
+                        <span class="skill">Quantum Cryptography</span>
+                        <span class="skill">Quantum Information Theory</span>
+                        <span class="skill">Quantum Neural Networks</span>
+                        <span class="skill">Quantum Simulation</span>
+                    </div>
+                </div>
+                
+                <!-- Programming & Tools -->
+                <div class="skill-category">
+                    <h3>Programming & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill">Qiskit</span>
+                        <span class="skill">Cirq</span>
+                        <span class="skill">Pennylane</span>
+                        <span class="skill">HPC</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">C/C++</span>
+                        <span class="skill">Cuda</span>
+                        <span class="skill">Tensflow</span>
+                        <span class="skill">MATLAB</span>
+                        <span class="skill">LaTeX/Overleaf</span>
+                        <span class="skill">Signal Processing</span>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <h3>Research & Analytical Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill">Problem Solving</span>
+                        <span class="skill">Analytical Thinking</span>
+                        <span class="skill">Data Analysis</span>
+                        <span class="skill">Research Documentation</span>
+                        <span class="skill">Leadership</span>
+                        <span class="skill">Collaboration</span>
+                    </div>
+                </div>
+                
+                <!-- Languages -->
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill">English</span>
+                        <span class="skill">Marathi</span>
+                        <span class="skill">Hindi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            
+            <div class="publications-container">
+                <!-- Publication 1 -->
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="pub-title">FedVQC for Genomic Data: A Quantum-Enhanced Privacy Approach</div>
+                    <div class="pub-authors">Hire, J.; et al.</div>
+                    <div class="pub-venue">Research Square (Preprint) - Springer</div>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="pub-title">Optimising Pulsar Classification in Astronomy through Quantum-Assisted Approach</div>
+                    <div class="pub-authors">Hire, J.; et al.</div>
+                    <div class="pub-venue">Research Square (Preprint) - Springer</div>
+                </div>
+                
+                <!-- Publication 3 -->
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="pub-title">A Novel Two-Step Hybrid Quantum Watermarking Technique</div>
+                    <div class="pub-authors">J. V. Hire, V. Gawande, L. Kumar and P. K Panigrahi</div>
+                    <div class="pub-venue">2024 International Conference on Engineering and Emerging Technologies (ICEET) - IEEE</div>
+                </div>
+                
+                <!-- Publication 4 -->
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="pub-title">Quantum-Accelerated Flight Selection: Probing Grover's Algorithm and Quantum Device Efficiency</div>
+                    <div class="pub-authors">Hire, J.; Gawande, V.; Dhande, S.</div>
+                    <div class="pub-venue">International Journal of Innovative Science and Research Technology, Volume 9 Issue 8</div>
+                </div>
+                
+                <!-- Publication 5 -->
+                <div class="pub-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="pub-title">Synthesis of graphene oxide enhanced AGAR Composites: a biocompatible photo-catalyst for degradation of organic dyes</div>
+                    <div class="pub-authors">Dindorkar, S.; Mistry, J.; Hire, J.; Jain, K.; Khona, N.; Peddakolmi, S.; More, P.</div>
+                    <div class="pub-venue">American Journal of Undergraduate Research 2020, 17 (3), 29-40</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements & Awards</h2>
+            
+            <div class="achievements-container">
+                <!-- Achievement 1 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="achievement-title">Poster Acceptance</div>
+                    <div class="achievement-details">"FedVQC for Genomic Data: A Quantum-Enhanced Privacy Approach"</div>
+                    <div class="achievement-venue">Quantum Science and Technology for Sustainable Development (QSTSD) 2025, Khalifa University</div>
+                </div>
+                
+                <!-- Achievement 2 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-title">Poster Acceptance</div>
+                    <div class="achievement-details">"Variational Quantum Eigensolver with Tensor-Network-Enhanced Measurement-Based Quantum Computing"</div>
+                    <div class="achievement-venue">Theory of Quantum Computation, Communication, and Cryptography (TQC) 2025, IISc Bengaluru</div>
+                </div>
+                
+                <!-- Achievement 3 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-title">Top 15 Finalist</div>
+                    <div class="achievement-details">Out of 137 teams in Pasqal's "Blaise Pascal Quantum Challenge 2025"</div>
+                </div>
+                
+                <!-- Achievement 4 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="achievement-title">Oral Presentation</div>
+                    <div class="achievement-details">"A Novel Two-Step Hybrid Quantum Watermarking Technique" at ICEET 2024</div>
+                </div>
+                
+                <!-- Achievement 5 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="achievement-title">Space Research Presentation</div>
+                    <div class="achievement-details">Presented innovative pulsar classification using quantum models</div>
+                    <div class="achievement-venue">Space Research Conference, UAE Space Agency</div>
+                </div>
+                
+                <!-- Achievement 6 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="achievement-title">2nd Prize - Hackathon</div>
+                    <div class="achievement-details">Quantum Federated Summer Hackathon 2024</div>
+                    <div class="achievement-venue">Quantum Formalism</div>
+                </div>
+                
+                <!-- Achievement 7 -->
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="achievement-title">Global Quantum Scholar</div>
+                    <div class="achievement-details">WOMANIUM Quantum 2023: Global Quantum Scholarship</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Courses & Certifications</h2>
+            
+            <div class="certifications-container">
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> Quantum Optimization</h3>
+                    <div class="card-subtitle">IBM Quantum Research</div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> IBM Quantum Challenge: Spring 2023</h3>
+                    <div class="card-subtitle">IBM</div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> Quantum Machine Learning</h3>
+                    <div class="card-subtitle">IBM Quantum Research</div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> Hands-on workshop on Quantum Computing with Amazon Bracket</h3>
+                    <div class="card-subtitle">AWS Quantum</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Reach Out</h2>
+            
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hire.jayesh123@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 98209 21466</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Mumbai, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Connect Online</h3>
+                            <div class="social-links" style="justify-content: flex-start; margin-top: 10px;">
+                                <a href="https://github.com/Jayesh1211" target="_blank" class="social-icon" style="width: 45px; height: 45px; font-size: 1.3rem;">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/jayeshhire456" target="_blank" class="social-icon" style="width: 45px; height: 45px; font-size: 1.3rem;">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form - Now using mailto to directly email you -->
+                <div class="contact-form">
+                    <h3 style="color: var(--accent); margin-bottom: 25px; font-size: 1.5rem;">Send a Message Directly to My Email</h3>
+                    <form id="contactForm" action="mailto:hire.jayesh123@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required value="Portfolio Contact - ">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.2rem; padding: 16px;">
+                            <i class="fas fa-paper-plane"></i> Send via Email Client
+                        </button>
+                        
+                        <p style="margin-top: 20px; font-size: 1rem; color: var(--text-secondary); text-align: center; line-height: 1.5;">
+                            This will open your email client to send the message directly to me.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2>Jayesh Hire</h2>
+            <p>Quantum Computing Specialist | Researcher | Innovator</p>
+            
+            <ul class="footer-links">
+                <li><a href="https://github.com/Jayesh1211" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jayeshhire456" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="mailto:hire.jayesh123@gmail.com"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            
+            <div class="copyright">
+                &copy; 2025 Jayesh Hire. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Create Enhanced Quantum/Atomic Background
+        function createQuantumBackground() {
+            const background = document.getElementById('quantum-background');
+            
+            // Create nuclei (atom centers)
+            for (let i = 0; i < 5; i++) {
+                const nucleus = document.createElement('div');
+                nucleus.classList.add('nucleus');
+                
+                // Random position
+                const posX = Math.random() * 90 + 5;
+                const posY = Math.random() * 90 + 5;
+                const size = Math.random() * 35 + 25;
+                
+                nucleus.style.width = `${size}px`;
+                nucleus.style.height = `${size}px`;
+                nucleus.style.left = `${posX}%`;
+                nucleus.style.top = `${posY}%`;
+                
+                // Create orbitals around each nucleus
+                for (let j = 1; j <= 3; j++) {
+                    const orbital = document.createElement('div');
+                    orbital.classList.add('orbital');
+                    
+                    const orbitalSize = size + (j * 90);
+                    orbital.style.width = `${orbitalSize}px`;
+                    orbital.style.height = `${orbitalSize}px`;
+                    orbital.style.left = `${posX}%`;
+                    orbital.style.top = `${posY}%`;
+                    orbital.style.transform = `translate(-50%, -50%)`;
+                    orbital.style.animation = `spin ${12 + j * 6}s linear infinite`;
+                    
+                    // Create electrons for each orbital
+                    for (let k = 0; k < (j * 2); k++) {
+                        const electron = document.createElement('div');
+                        electron.classList.add('electron');
+                        
+                        const electronSize = Math.random() * 10 + 8;
+                        electron.style.width = `${electronSize}px`;
+                        electron.style.height = `${electronSize}px`;
+                        
+                        // Position electron on orbital
+                        const angle = (k * (360 / (j * 2))) + (Math.random() * 30);
+                        const radius = orbitalSize / 2;
+                        const electronX = radius * Math.cos(angle * Math.PI / 180);
+                        const electronY = radius * Math.sin(angle * Math.PI / 180);
+                        
+                        electron.style.left = `calc(50% + ${electronX}px)`;
+                        electron.style.top = `calc(50% + ${electronY}px)`;
+                        electron.style.animation = `electronOrbit ${10 + j * 3}s linear infinite`;
+                        
+                        orbital.appendChild(electron);
+                    }
+                    
+                    nucleus.appendChild(orbital);
+                }
+                
+                background.appendChild(nucleus);
+            }
+            
+            // Create quantum particles
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('quantum-particle');
+                
+                const size = Math.random() * 12 + 6;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                
+                // Random movement
+                const duration = Math.random() * 18 + 12;
+                const delay = Math.random() * 5;
+                particle.style.animation = `quantumFloat ${duration}s ease-in-out ${delay}s infinite alternate`;
+                
+                background.appendChild(particle);
+            }
+            
+            // Create wave patterns
+            for (let i = 0; i < 10; i++) {
+                const wave = document.createElement('div');
+                wave.classList.add('wave');
+                
+                const size = Math.random() * 500 + 300;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                wave.style.width = `${size}px`;
+                wave.style.height = `${size}px`;
+                wave.style.left = `${posX}%`;
+                wave.style.top = `${posY}%`;
+                wave.style.transform = `translate(-50%, -50%)`;
+                wave.style.animation = `pulse ${10 + i * 2}s ease-in-out infinite`;
+                
+                background.appendChild(wave);
+            }
+        }
+        
+        // Add CSS animations for background elements
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes spin {
+                0% { transform: translate(-50%, -50%) rotate(0deg); }
+                100% { transform: translate(-50%, -50%) rotate(360deg); }
+            }
+            
+            @keyframes electronOrbit {
+                0% { transform: rotate(0deg) translateX(var(--radius, 60px)) rotate(0deg); }
+                100% { transform: rotate(360deg) translateX(var(--radius, 60px)) rotate(-360deg); }
+            }
+            
+            @keyframes quantumFloat {
+                0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+                50% { transform: translate(${Math.random() * 150 - 75}px, ${Math.random() * 150 - 75}px) scale(1.3); opacity: 0.7; }
+                100% { transform: translate(${Math.random() * 150 - 75}px, ${Math.random() * 150 - 75}px) scale(1); opacity: 0.4; }
+            }
+            
+            @keyframes pulse {
+                0% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+                50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+                100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            }
+            
+            /* Add animation to electrons on orbitals */
+            .orbital .electron {
+                --radius: calc(var(--index, 1) * 45px);
+                animation: electronOrbit calc(10s + var(--index, 1) * 3s) linear infinite;
+            }
+        `;
+        document.head.appendChild(styleSheet);
+        
+        // Initialize background when page loads
+        window.addEventListener('load', createQuantumBackground);
+        
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
+            } else {
+                header.style.boxShadow = '0 5px 25px rgba(0, 0, 0, 0.4)';
+            }
+        });
+        
+        // Update CV download link year
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('.copyright').innerHTML = `&copy; ${currentYear} Jayesh Hire. All Rights Reserved.`;
+            
+            // Set default subject for contact form
+            const subjectField = document.getElementById('subject');
+            if (subjectField && subjectField.value === 'Portfolio Contact - ') {
+                // Keep it as is, user can add to it
+            }
+        });
+    </script>
+</body>
+</html>
